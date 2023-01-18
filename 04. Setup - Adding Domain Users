@@ -1,0 +1,234 @@
+ @@@@@@@@@@@@@@@@@@@@
+ @ Add Domain Users @
+ @@@@@@@@@@@@@@@@@@@@
+
+ # Following GitHub has a PowerShell script: https://github.com/WazeHell/vulnerable-AD
+
+# We've installed Active Directory so we'll run only the following from above GitHub:
+[Admin@DC]> IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/wazehell/vulnerable-AD/master/vulnad.ps1"));
+
+# Generate 100 random users
+[Admin@DC]> Invoke-VulnAD -UsersLimit 100 -DomainName "ocp.com"
+
+###########################
+# Output from 18-JAN-2023 #
+###########################
+
+VULN AD - Vulnerable Active Directory
+
+        By wazehell @safe_buffer
+        [*] Creating sallyanne.albertina User
+        [*] Creating prudence.gabey User
+        [*] Creating harmonie.gabi User
+        [*] Creating briney.idaline User
+        [*] Creating lauren.ray User
+        [*] Creating ericka.debra User
+        [*] Creating sherline.mariam User
+        [*] Creating nita.kerrin User
+        [*] Creating kim.catlin User
+        [*] Creating cathleen.katey User
+        [*] Creating chrystel.brigitte User
+        [*] Creating jobi.kizzee User
+        [*] Creating doralin.klaus User
+        [*] Creating shani.roxane User
+        [*] Creating adara.ronny User
+        [*] Creating karalynn.shauna User
+        [*] Creating rayshell.gilly User
+        [*] Creating ree.jessamine User
+        [*] Creating irita.erinna User
+        [*] Creating kerk.farand User
+        [*] Creating loella.babette User
+        [*] Creating mickie.marika User
+        [*] Creating ellissa.joella User
+        [*] Creating april.franni User
+        [*] Creating claudia.elvera User
+        [*] Creating leta.lyndsie User
+        [*] Creating orella.calla User
+        [*] Creating lorenza.kristofor User
+        [*] Creating gena.issie User
+        [*] Creating noreen.lisette User
+        [*] Creating ginnifer.elayne User
+        [*] Creating agnes.corly User
+        [*] Creating kerstin.bethany User
+        [*] Creating jilleen.prisca User
+        [*] Creating berte.maris User
+        [*] Creating matty.dorise User
+        [*] Creating kirstin.haley User
+        [*] Creating carry.anita User
+        [*] Creating sandie.gloriana User
+        [*] Creating mireielle.lilly User
+        [*] Creating klarrisa.meridel User
+        [*] Creating misty.daryn User
+        [*] Creating ibbie.lazar User
+        [*] Creating jannel.brittney User
+        [*] Creating gerry.leta User
+        [*] Creating sandra.barb User
+        [*] Creating carilyn.kennie User
+        [*] Creating benni.rubi User
+        [*] Creating lou.mabelle User
+        [*] Creating kerrill.link User
+        [*] Creating olive.shaylyn User
+        [*] Creating kai.raphaela User
+        [*] Creating dara.karilynn User
+        [*] Creating goldia.belita User
+        [*] Creating anthea.lothaire User
+        [*] Creating nolie.dacy User
+        [*] Creating alika.marena User
+        [*] Creating shawn.geraldine User
+        [*] Creating sibel.leia User
+        [*] Creating leonhard.helena User
+        [*] Creating bobby.dorine User
+        [*] Creating florence.florella User
+        [*] Creating rosalind.carolyne User
+        [*] Creating prue.casandra User
+        [*] Creating martita.deeanne User
+        [*] Creating marleen.elita User
+        [*] Creating isidora.daniela User
+        [*] Creating patti.nicoline User
+        [*] Creating florencia.ranique User
+        [*] Creating gloriana.beth User
+        [*] Creating freddi.cele User
+        [*] Creating lindi.demetria User
+        [*] Creating maressa.charline User
+        [*] Creating ericka.natalie User
+        [*] Creating nannie.bunnie User
+        [*] Creating marie-ann.gilbertina User
+        [*] Creating diandra.gabriellia User
+        [*] Creating alina.billy User
+        [*] Creating faye.lorita User
+        [*] Creating bertha.jojo User
+        [*] Creating celene.nessie User
+        [*] Creating adella.lena User
+        [*] Creating benedicta.shalne User
+        [*] Creating june.cacilie User
+        [*] Creating maible.pierette User
+        [*] Creating pattie.ellette User
+        [*] Creating glennie.kippie User
+        [*] Creating sibeal.karlyn User
+        [*] Creating enid.ashia User
+        [*] Creating kirbee.jeannette User
+        [*] Creating sharron.lon User
+        [*] Creating ariel.sara-ann User
+        [*] Creating nananne.cathie User
+        [*] Creating merralee.nona User
+        [*] Creating starlin.louisette User
+        [*] Creating rachelle.edna User
+        [*] Creating federica.livia User
+        [*] Creating pattie.jandy User
+        [*] Creating sidonnie.leanor User
+        [*] Creating maggie.grace User
+        [+] Users Created
+        [*] Creating Office Admin Group
+        [*] Adding ericka.natalie to Office Admin
+        [*] Adding maible.pierette to Office Admin
+        [*] Adding sallyanne.albertina to Office Admin
+        [*] Adding ericka.debra to Office Admin
+        [*] Creating IT Admins Group
+        [*] Adding gerry.leta to IT Admins
+        [*] Adding irita.erinna to IT Admins
+        [*] Adding april.franni to IT Admins
+        [*] Adding gerry.leta to IT Admins
+        [*] Adding kerk.farand to IT Admins
+        [*] Creating Executives Group
+        [*] Adding shani.roxane to Executives
+        [*] Adding lauren.ray to Executives
+        [*] Adding karalynn.shauna to Executives
+        [+] Office Admin IT Admins Executives Groups Created
+        [*] Creating Senior management Group
+        [*] Adding loella.babette to Senior management
+        [*] Adding benedicta.shalne to Senior management
+        [*] Adding lou.mabelle to Senior management
+        [*] Creating Project management Group
+        [*] Adding ariel.sara-ann to Project management
+        [*] Adding kirbee.jeannette to Project management
+        [*] Adding kirbee.jeannette to Project management
+        [+] Senior management Project management Groups Created
+        [*] Creating marketing Group
+        [*] Adding faye.lorita to marketing
+        [*] Adding dara.karilynn to marketing
+        [*] Adding kirbee.jeannette to marketing
+        [*] Adding noreen.lisette to marketing
+        [*] Adding isidora.daniela to marketing
+        [*] Adding ibbie.lazar to marketing
+        [*] Adding sandra.barb to marketing
+        [*] Creating sales Group
+        [*] Adding sandie.gloriana to sales
+        [*] Adding bobby.dorine to sales
+        [*] Adding gena.issie to sales
+        [*] Adding sandie.gloriana to sales
+        [*] Adding noreen.lisette to sales
+        [*] Creating accounting Group
+        [*] Adding cathleen.katey to accounting
+        [*] Adding florence.florella to accounting
+        [*] Adding patti.nicoline to accounting
+        [*] Adding nolie.dacy to accounting
+        [+] marketing sales accounting Groups Created
+        [*] BadACL GenericAll sales to Project management
+        [*] BadACL GenericWrite sales to Project management
+        [*] BadACL WriteOwner sales to Project management
+        [*] BadACL WriteDACL marketing to Project management
+        [*] BadACL Self accounting to Project management
+        [*] BadACL WriteProperty sales to Project management
+        [*] BadACL GenericAll Senior management to Office Admin
+        [*] BadACL GenericWrite Senior management to Executives
+        [*] BadACL WriteOwner Senior management to Executives
+        [*] BadACL WriteDACL Senior management to Office Admin
+        [*] BadACL Self Project management to Office Admin
+        [*] BadACL WriteProperty Project management to Executives
+        [*] BadACL WriteProperty sibel.leia and marketing
+        [*] BadACL WriteOwner ibbie.lazar and Executives
+        [*] BadACL GenericAll kerk.farand and Senior management
+        [*] BadACL GenericAll patti.nicoline and marketing
+        [*] BadACL GenericWrite maggie.grace and IT Admins
+        [+] BadACL Done
+        [*] Kerberoasting http_svc httpserver
+
+
+DistinguishedName : CN=http_svc,CN=Managed Service Accounts,DC=ocp,DC=com
+Enabled           : True
+Name              : http_svc
+ObjectClass       : msDS-ManagedServiceAccount
+ObjectGUID        : 3214be2c-e8bf-4fc6-9af6-69505d34fbaf
+SamAccountName    : http_svc$
+SID               : S-1-5-21-3730103262-3093000856-567282780-1213
+UserPrincipalName :
+
+        [*] Creating mssql_svc services account
+DistinguishedName : CN=mssql_svc,CN=Managed Service Accounts,DC=ocp,DC=com
+Enabled           : True
+Name              : mssql_svc
+ObjectClass       : msDS-ManagedServiceAccount
+ObjectGUID        : 00373a90-a9e7-47b8-b4e7-4cd056b52769
+SamAccountName    : mssql_svc$
+SID               : S-1-5-21-3730103262-3093000856-567282780-1214
+UserPrincipalName :
+
+        [*] Creating exchange_svc services account
+DistinguishedName : CN=exchange_svc,CN=Managed Service Accounts,DC=ocp,DC=com
+Enabled           : True
+Name              : exchange_svc
+ObjectClass       : msDS-ManagedServiceAccount
+ObjectGUID        : 6d4fa480-1c7f-4835-b11d-02ea9de8ed25
+SamAccountName    : exchange_svc$
+SID               : S-1-5-21-3730103262-3093000856-567282780-1215
+UserPrincipalName :
+
+        [+] Kerberoasting Done
+        [*] AS-REPRoasting benedicta.shalne
+        [*] AS-REPRoasting sibel.leia
+        [+] AS-REPRoasting Done
+        [*] DnsAdmins : glennie.kippie
+        [*] DnsAdmins : dara.karilynn
+        [*] DnsAdmins Nested Group : Project management
+        [+] DnsAdmins Done
+        [*] Password in Description : karalynn.shauna
+        [+] Password In Object Description Done
+        [*] Default Password : carilyn.kennie
+        [*] Default Password : maggie.grace
+        [+] Default Password Done
+        [*] Same Password (Password Spraying) : dara.karilynn
+        [+] Password Spraying Done
+        [*] Giving DCSync to : florence.florella
+        [*] Giving DCSync to : nananne.cathie
+        [+] DCSync Done
+        [+] SMB Signing Disabled
