@@ -5,10 +5,17 @@
  # Following GitHub has a PowerShell script: https://github.com/WazeHell/vulnerable-AD
 
 # We've installed Active Directory so we'll run only the following from above GitHub:
-[Admin@DC]> IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/wazehell/vulnerable-AD/master/vulnad.ps1"));
+[DA@DC]> IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/wazehell/vulnerable-AD/master/vulnad.ps1"));
 
 # Generate 100 random users
-[Admin@DC]> Invoke-VulnAD -UsersLimit 100 -DomainName "ocp.com"
+[DA@DC]> Invoke-VulnAD -UsersLimit 100 -DomainName "ocp.com"
+
+######################
+# Working with Users #
+######################
+
+# As DA reset user passwords with GUI or PS:
+[DA@DC]> Set-ADAccountPassword –Identity <Identity> –Reset –NewPassword (ConvertTo-SecureString -AsPlainText "<New Password>" -Force)
 
 ###########################
 # Output from 18-JAN-2023 #
@@ -232,3 +239,5 @@ UserPrincipalName :
         [*] Giving DCSync to : nananne.cathie
         [+] DCSync Done
         [+] SMB Signing Disabled
+
+
