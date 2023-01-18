@@ -1,0 +1,17 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Access DC from MGMT Client @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+# Note: must be local admin user
+# Start Windows Remoting
+[PS]> Start-Service WinRM
+
+# View Trusted Hosts
+[PS]> Get-Item wsman:\localhost\Client\TrustedHosts
+
+# Add DC as trusted host by IP
+[PS]> Set-Item wsman:\localhost\Client\TrustedHosts -value <DC IPAddress>
+
+# Access DC with PowerShell Remoting
+[PS] $session = New-PSSession -ComputerName <DC IPAddress> -Credential (Get-Credential)
+[PS] Enter-PSSession -Session $session

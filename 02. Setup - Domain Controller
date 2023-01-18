@@ -1,0 +1,44 @@
+@@@@@@@@@@@@@@@@@@@@@@@@
+@ Convert Server to DC @
+@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+#################################
+# Install and Setup AD Services #
+#################################
+
+# From a fresh windows Server clone setup the Domain Controller
+1. Use [PS]> sconfig to:
+    - Change the hostname (DC01)
+    - Change the IP address to static (192.168.206.100)
+    - Change the DNS server to our own IP address (192.168.206.100)
+
+2. Install the AD Windows Feature
+# View options relevant to Active Directory/AD:
+[PS]> Get-WindowsFeatures | Where-Object { $_.Name -Like "*AD*"}
+
+[PS]> Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+
+################################
+# Promote to Domain Controller #
+################################
+
+# Import Modules and Create Domain
+[PS]> Import-Module ADDSDeployment
+[PS]> Install-ADDSForest
+> ocp.com
+> <safe mode admin password>
+
+####################################
+# Post-Deployment DNS Housekeeping #
+####################################
+
+# View DNS Settings
+[PS]> Get-DNSClientServerAddress
+
+# Set DNS address
+[PS]> Set-DNSClientServerAddress -InterfaceIndex <Index> -ServerAddresses <Static IPAddress> 
+
+!!!!!!!!!!!!!!!!!!!
+! Take a Snapshot !
+!!!!!!!!!!!!!!!!!!!
