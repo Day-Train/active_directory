@@ -1,4 +1,10 @@
-# 01 Installing the Domain Controller
+@@@@@@@@@@@@@@@@@@@@@@@@
+@ Convert Server to DC @
+@@@@@@@@@@@@@@@@@@@@@@@@
+
+# From a fresh DC Clone
+
+01 Installing the Domain Controller
 
 1. Use `scfonfig` to:
     - Change the hostname
