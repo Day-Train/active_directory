@@ -2,3 +2,26 @@
 @ Convert Workstation to Domain-Joined Host @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+# Recommend change the computer name (local instructions below)
+[PS]> Rename-Computer -ComputerName <Current Name> -NewName <New Name> -Force -Restart
+
+#################
+# Configure DNS #
+#################
+
+[PS]> Get-NetIPAddress
+
+[PS]> Set-DNSClientServerAddress -InterfaceIndex <Index> -ServerAddresses <DC IPAddress> 
+
+###################
+# Join the Domain #
+###################
+
+# GUI
+[Settings]->[Accounts]->[Access work or school]->[Join this device to a local ACtive Directory domain]
+domain> ocp.com
+
+OR
+
+# PowerShell, you can use DA creds (lol) until you build out regular users
+[PS]> Add-Computer -DomainName ocp.com -Credential (Get-Credential) -Restart -Force
