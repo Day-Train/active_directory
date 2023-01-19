@@ -24,4 +24,4 @@ domain> ocp.com
 OR
 
 # PowerShell, you can use DA creds (lol) until you build out regular users
-[PS]> Add-Computer -DomainName ocp.com -Credential (Get-Credential) -Restart -Force
+[PS]> Add-Computer -DomainName ocp.com -Credential (Get-Credential) -Force -Restart
