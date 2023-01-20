@@ -1,0 +1,30 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Convert Server to Domain-Joined SQL Server @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+# Regenerate the Machine SID because it's probably a clone and will conflict...
+[PS]> cd C:\Windows\system32\sysprep
+[PS]> .\sysprep.exe /generalize /shutdown /oobe
+
+# Change the computer name
+[PS]> Rename-Computer -ComputerName <Current Name> -NewName MSSQL01 -Force -Restart
+
+#################
+# Configure DNS #
+#################
+
+[PS]> Get-NetIPAddress
+[PS]> Set-DnsClientServerAddress -InterfaceIndex <Index> -ServerAddresses <DC IPAddress> 
+
+###################
+# Join the Domain #
+###################
+
+# GUI
+[Settings]->[Accounts]->[Access work or school]->[Join this device to a local Active Directory domain]
+domain> ocp.com
+
+OR
+
+# PowerShell, you can use DA creds (lol) until you build out regular users
+[PS]> Add-Computer -DomainName ocp.com -Credential (Get-Credential) -Force -Restart

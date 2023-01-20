@@ -10,8 +10,7 @@
 #################
 
 [PS]> Get-NetIPAddress
-
-[PS]> Set-DNSClientServerAddress -InterfaceIndex <Index> -ServerAddresses <DC IPAddress> 
+[PS]> Set-DnsClientServerAddress -InterfaceIndex <Index> -ServerAddresses <DC IPAddress> 
 
 ###################
 # Join the Domain #
